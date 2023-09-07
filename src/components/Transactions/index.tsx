@@ -13,7 +13,7 @@ export const Transactions: TransactionsComponent = ({ transactions }) => {
         transactionId,
         value: newValue,
       })
-      const endpointsToClear: RegisteredEndpoints[] = ["paginatedTransactions"]
+      const endpointsToClear: RegisteredEndpoints[] = ["paginatedTransactions", "transactionsByEmployee"]
 
       clearCacheByEndpoint(endpointsToClear)
     },
