@@ -1,9 +1,6 @@
-// import { clearCacheByEndpoint }  from "src/hooks/useCustomFetch"
-
 import mockData from "../mock-data.json"
 import { PaginatedRequestParams, PaginatedResponse, Transaction } from "../utils/types"
 import { Employee, RequestByEmployeeParams, SetTransactionApprovalParams } from "./types"
-// import { clearCacheByEndpoint } from "./src/hooks/useCustomFetch"
 
 const TRANSACTIONS_PER_PAGE = 5
 const data: { employees: Employee[]; transactions: Transaction[] } = {
@@ -54,10 +51,6 @@ export const setTransactionApproval = async ({
   if (!transaction) {
     throw new Error("Invalid transaction to approve")
   }
-  // const { clearCacheByEndpoint } = useCustomFetch()
-  // const endpointsToClear: RegisteredEndpoints[] = ["setTransactionApproval"]
-
-  // clearCacheByEndpoint(endpointsToClear)
 
   transaction.approved = value
 }

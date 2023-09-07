@@ -1,5 +1,6 @@
 import { useCallback } from "react"
 import { useCustomFetch } from "src/hooks/useCustomFetch"
+import { RegisteredEndpoints } from "src/utils/fetch"
 import { SetTransactionApprovalParams } from "src/utils/types"
 import { TransactionPane } from "./TransactionPane"
 import { SetTransactionApprovalFunction, TransactionsComponent } from "./types"
@@ -12,6 +13,9 @@ export const Transactions: TransactionsComponent = ({ transactions }) => {
         transactionId,
         value: newValue,
       })
+      const endpointsToClear: RegisteredEndpoints[] = ["paginatedTransactions"]
+
+      clearCacheByEndpoint(endpointsToClear)
     },
 
     [fetchWithoutCache, clearCacheByEndpoint]
